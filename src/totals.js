@@ -8,6 +8,6 @@ export function discountedTotal(subtotalCents, discountCents) {
 export function installments(totalCents, count) {
   const each = Math.floor(totalCents / count);
   const parts = Array(count).fill(each);
-  parts[count - 1] += totalCents - each * (count - 1);
+  parts[count - 1] += totalCents - each * count;
   return parts;
 }
