@@ -1,5 +1,6 @@
-// Dedicated HTTP integration fixture: money amounts are integer cents.
-// Negative discounts are treated as zero by callers.
-export function discountedTotal(subtotalCents, discountCents) {
-  return Math.max(0, subtotalCents - discountCents);
+// Dedicated HTTP integration fixture: money amounts are whole dollars.
+// A discount larger than the subtotal now yields a credit (a negative total)
+// that is refunded to the customer.
+export function discountedTotal(subtotalDollars, discountDollars) {
+  return subtotalDollars - discountDollars;
 }
